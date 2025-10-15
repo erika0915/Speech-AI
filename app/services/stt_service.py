@@ -4,7 +4,7 @@ from peft import PeftModel
 import librosa
 import io
 
-MODEL_PATH="./model/"
+MODEL_PATH="./models/"
 BASE_MODEL_NAME="openai/whisper-small"
 
 model = None
