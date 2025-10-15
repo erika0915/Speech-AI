@@ -17,7 +17,6 @@ def load_model():
         processor = WhisperProcessor.from_pretrained(BASE_MODEL_NAME,language="korean", task="transcribe")
         base_model = WhisperForConditionalGeneration.from_pretrained(
             BASE_MODEL_NAME,
-            load_in_8bit=True,
             device_map="auto"
         )
         model = PeftModel.from_pretrained(base_model, MODEL_PATH)
