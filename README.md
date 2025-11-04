@@ -1,10 +1,11 @@
 # handDoc - Speech-AI
 FastAPI 기반으로 음성 파일을 받아 파인튜닝된 Whisper 모델을 통해 텍스트 결과를 반환합니다. 
 
-### 🛠️ 기술 스택
+## 🛠️ 기술 스택
+- 데이터셋 : [구음장애 음성 인식 데이터](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=608)
+- 
 
-
-### 🚀 실행 방법
+## 🚀 실행 방법
 
 ```bash
 # 가상환경 생성 및 활성화
