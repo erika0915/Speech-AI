@@ -11,7 +11,7 @@ async def lifespan(app: FastAPI):
     #  서버 종료 시 정리 
     print("서버가 종료되었습니다.")
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, root_path="/stt")
 
 @app.get("/")
 def read_root():
