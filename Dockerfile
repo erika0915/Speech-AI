@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ COPY requirements.txt .
 # CPU 전용 PyTorch를 명시
 RUN pip install --no-cache-dir -r requirements.txt \
     --extra-index-url https://download.pytorch.org/whl/cpu
-    
+
 # 5. 모델 어댑터 복사 
 COPY ./models ./models
 
