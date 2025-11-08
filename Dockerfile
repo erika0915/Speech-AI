@@ -14,8 +14,8 @@ COPY requirements.txt .
 
 # CPU 전용 PyTorch를 명시
 RUN pip install --no-cache-dir -r requirements.txt \
-    --index-url https://download.pytorch.org/whl/cpu
-
+    --extra-index-url https://download.pytorch.org/whl/cpu
+    
 # 5. 모델 어댑터 복사 
 COPY ./models ./models
 
