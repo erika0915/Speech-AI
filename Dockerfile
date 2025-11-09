@@ -16,12 +16,12 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt \
     --extra-index-url https://download.pytorch.org/whl/cpu
 
-# 5. 모델 어댑터 복사 
+# 모델 어댑터 복사 
 COPY ./models ./models
 
 COPY ./app ./app
 
 EXPOSE 8000
 
-# 8. 서버 실행 명령어
+# 서버 실행 명령어
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
