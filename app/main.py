@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, File
 from contextlib import asynccontextmanager
 from .services import stt_service
+from fastapi.middleware.cors import CORSMiddleware
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -12,6 +13,16 @@ async def lifespan(app: FastAPI):
     print("서버가 종료되었습니다.")
 
 app = FastAPI(lifespan=lifespan, root_path="/stt")
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
